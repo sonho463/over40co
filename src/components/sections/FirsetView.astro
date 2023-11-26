@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import fvBg from "../../images/fv-bg.jpg";
+---
+
+<section class="l-fv">
+  <div class="l-fv-bg">
+    <Image src={fvBg} alt="" />
+  </div>
+  <div class="p-fv content-width">
+    <h2 class="copy">
+      何かを始めるときに<br />
+       遅すぎるということはない
+    </h2>
+    <div class="nameBlock">
+      <p class="name">Over 40 Web Club</p>
+      <a href="" class="link">お問い合わせはこちら</a>
+    </div>
+  </div>
+</section>
+
+
+<style lang="scss">
+  .l-fv {
+    position: relative;
+    height: 700px;
+  }
+  .l-fv-bg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    img {
+      width: 100%;
+    }
+  }
+  .p-fv {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .copy {
+    font-size: 3.6rem;
+  }
+  .nameBlock {
+    .name {
+      margin-bottom: 0;
+      font-size: 2.4rem;
+    }
+    .link {
+      font-size: 2rem;
+    }
+    align-self: flex-end;
+  }
+</style>
