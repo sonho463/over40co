@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import astroImage from "../images/miles-burke-idhx-MOCDSk-unsplash.jpg";
+import Layout from "../layouts/Layout.astro";
+import LowerFv from "../components/LowerFv.astro";
+const title = "お問い合わせ";
+const desc =
+  "つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし";
+---
+
+<Layout title={title} desc={desc}>
+  <main>
+    <div class="fv">
+      <div class="image">
+        <Image src={astroImage} alt="" />
+      </div>
+      <LowerFv title={title} desc={desc} />
+    </div>
+    <div class="container">
+      <form action="">
+        <label for="uname">
+          お名前
+          <input type="text" name="uname" />
+        </label>
+        <label for="uemail">
+          メールアドレス
+          <input type="text" name="uemail" />
+        </label>
+        <label for="content">
+          内容
+          <textarea name="content"></textarea>
+        </label>
+      </form>
+    </div>
+  </main>
+</Layout>
+<style lang="scss">
+  .image {
+    width: 60vw;
+    margin-inline-end: auto;
+    margin-left: auto;
+  }
+  .container {
+    margin-top: 4vw;
+    width: 60vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  label {
+    margin-top: 2vw;
+    &:has(> textarea) {
+      vertical-align: bottom;
+    }
+
+    + label {
+    }
+    display: block;
+    font-size: 2vw;
+  }
+  input {
+    border-bottom: 1px solid #333;
+  }
+  textarea {
+    border: 1px solid #333;
+    resize: none;
+    height: 10lh;
+    padding: 1vw;
+  }
+</style>

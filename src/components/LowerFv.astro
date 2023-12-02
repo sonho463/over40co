@@ -1,0 +1,21 @@
+---
+const { title,desc } = Astro.props;
+---
+
+<h1>{title}</h1>
+<p>{desc}</p>
+
+
+<style>
+    h1{
+        font-size: 4vw;
+        font-weight: bold;
+        text-align: center;
+    }
+    p{
+        width: 50%;
+        margin-inline-end: auto;
+        margin-left: auto;
+        font-size: 1.6vw;
+    }
+</style>

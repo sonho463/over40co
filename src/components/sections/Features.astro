@@ -1,0 +1,47 @@
+---
+import FeatureItem from "../FeatureItem.astro";
+import SectionTitle from "../SectionTitle.astro";
+---
+
+<section class="features content-width">
+  <SectionTitle text="選ばれる理由" />
+  <p class="lead">
+    親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、
+  </p>
+  <div class="container">
+    <FeatureItem
+      title="ずっと無料"
+      text="ずっと無料です。ゆる〜く集まって時々、何かをやります。"
+      imagePathText="image.svg"
+      alt=""
+    />
+    <FeatureItem
+      title="いろいろなメンバー"
+      text="フロント、バックエンド、ウェブ制作・・・いろいろな人がいます。"
+      imagePathText="image.svg"
+      alt=""
+    />
+    <FeatureItem
+      title="40ならではの"
+      text="一定の人生経験を経た人たちの話題は渋めです。"
+      imagePathText="image.svg"
+      alt=""
+    />
+  </div>
+</section>
+
+<style>
+  .features {
+    padding-top: 10vw;
+  }
+
+  .container {
+    margin-top: 4vw;
+    display: flex;
+    gap: 4vw;
+    justify-content: space-between;
+    > * {
+      flex: 1;
+    }
+  }
+</style>

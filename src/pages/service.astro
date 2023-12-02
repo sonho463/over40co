@@ -1,0 +1,31 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+import Features from "../components/sections/Features.astro";
+import FirsetView from "../components/sections/FirsetView.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import dog from "../images/unsplash_oU6KZTXhuvk.jpg";
+import LowerFv from "../components/LowerFv.astro";
+const title="Over40coのサービス"
+const desc="つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書"
+---
+
+<Layout title={title}>
+  <main>
+    <div class="fv">
+      <div class="image">
+        <Image src={dog} alt="" />
+      </div>
+      <LowerFv title={title} desc={desc}/>
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  .image{
+    width: 30vw;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+</style>

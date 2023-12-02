@@ -1,6 +1,8 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import "../styles/destyle.css";
 import "../styles/global.scss";
 
 interface Props {
@@ -21,13 +23,13 @@ const { title, desc } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={desc} />
+    <ViewTransitions/>
   </head>
   <body>
     <Header />
-    
+
     <slot />
 
     <Footer />
   </body>
 </html>
-

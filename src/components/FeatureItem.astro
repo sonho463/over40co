@@ -1,0 +1,36 @@
+---
+const { title, text, imagePathText, alt } = Astro.props;
+const imagePath = "/images/" + imagePathText;
+---
+
+<div class="featureItem">
+  <figure class="image">
+    <img src={imagePath} alt="" />
+  </figure>
+  <h3 class="title">
+    {title}
+  </h3>
+  <p class="text">{text}</p>
+</div>
+
+<style lang="scss">
+  @use "../styles/variables" as *;
+  .image {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .title {
+    margin-top: 1vw;
+    font-size: 1.4vw;
+    text-wrap: balance;
+    text-align: center;
+  }
+  .text {
+    margin-top: 1vw;
+    font-size: 1vw;
+    width: 50%;
+    margin-inline-end: auto;
+    margin-left: auto;
+  }
+</style>

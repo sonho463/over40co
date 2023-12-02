@@ -1,5 +1,6 @@
 ## はじめに
 
+
 1. この本で紹介していること
 
 1. 必要な環境
@@ -45,7 +46,7 @@
     ● Yes  ○ No 
     ```
 
-1. Astroサイトをスタート
+1. 開発環境でAstroサイトをスタート〜デプロイ
 
     SSGなどのツールを使用した開発ではLocalサーバーで開発→Localでbuildして確認（本番に近い状態）→本番へデプロイという流れをとるのが多いです。
 
@@ -78,10 +79,19 @@
     - pages内のファイル名がそのままリンクになります。
         index.astro -> /
         about.astro -> /about
+        service.astro -> /service
+
 1. src/layoutsフォルダ
+    -  Layoutコンポーネント
+        ヘッダーとかフッターとか
+        `<slot />`に各コンテンツ
 
 1. src/componentsフォルダ
+    -  部品のフォルダ
+    - 部品にわけて管理する
+    
 1. src/stylesフォルダ
+
 1. publicフォルダ
     - mdファイル内で使用する画像やCMSで登録した画像などはsrcフォルダに保存しませんので、ここに格納します。
     - プロジェクトから参照するときは、piublic=rootという考え方で、パス指定をします。
@@ -94,30 +104,37 @@
 
     [Layouts](https://docs.astro.build/ja/core-concepts/layouts/)
 
-
-## Layoutコンポーネント
-1. Layoutコンポーネントについて
-1. headタグのtitle,description~コードフェンスとAstro.props
-1. Layoutコンポーネントにヘッダーとフッターをを追加する
-## CSSについて
-1. グローバルCSSを追加（stylesフォルダ）
-1. コンポーネントのCSS
-1. ヘッダーとフッターのCSS
-## トップページ｜コンテンツ
-1. デフォルトで入っているコンポーネントから学ぶ
+## 制作
+### ベース
+1. pages内のindex.astroを確認サンプルコンテンツ削除
+1. 各ページのファイルを作成
+    アバウト、サービス、コンタクト
+    1. デフォルトで入っているコンポーネントから学ぶ
 
     1. interface props
 
         このコンポーネントに渡されるパラメータの種類を規定
     
-    2. const { href, title, body } = Astro.props;
+    1. const { href, title, body } = Astro.props;
         
         コンポーネントで使用する変数に展開
-        
-1. 各セクション
-1. 何度も使いそうな部品　CTA →　Footerに゙追加   
-## お知らせ
+
+### Layoutコンポーネント
+1. Layoutコンポーネントについて
+1. headタグのtitle,description~コードフェンスとAstro.propsで各ページのmeta情報セット
+1. Layoutコンポーネントにヘッダーとフッターをを追加する
+### CSSについて
+1. グローバルCSSとdestyle.cssを追加（stylesフォルダ）
+    Layoutコンポーネントで読み込み→すべてのファイルに適用される
+1. コンポーネントのCSS
+1. ヘッダーとフッターのCSSをあててみる
+### トップページ｜コンテンツ  
+1. 各セクションをコンポーネントで作成
+1. 何度も使いそうな部品　CTA →　Footerに゙追加
+1. ボタンコンポーネント
+### お知らせ
+1. microCMSとの接続
 1. 環境変数→vercelにも必要
-## お問い合わせ作ってみる
+### お問い合わせ作ってみる
 1. SSGフォーム
 2. NetlifyForms

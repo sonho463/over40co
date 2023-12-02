@@ -1,29 +1,75 @@
 ---
-
+import { Image } from "astro:assets";
+import HeaderLogo from "../images/icon-512x512.png";
 ---
+
 <header class="header">
-    <div class="header__logo"></div>
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+        <Image src={HeaderLogo} alt="" />
+      </a>
+    </div>
     <nav class="gnav">
       <ul class="gnav__list">
         <li class="gnav__item">
-          <a href="/">
-            ホーム
-          </a>
+          <a href="/"> ホーム</a>
         </li>
         <li class="gnav__item">
-          <a href="/service">
-            サービス
-          </a>
+          <a href="/service"> サービス</a>
         </li>
         <li class="gnav__item">
-          <a href="/about">
-            アバウト
-          </a>
+          <a href="/about"> アバウト</a>
         </li>
-
       </ul>
     </nav>
     <nav class="contact">
       <a href="/contact">お問い合わせはこちら</a>
     </nav>
-  </header>
+  </div>
+</header>
+
+<style lang="scss">
+  @use "../styles/variables" as *;
+
+  .header {
+    height: 80px;
+    margin-bottom: 4vw;
+  }
+  .header__inner {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    width: 16vw;
+    img {
+      width: 80px;
+    }
+  }
+
+  .gnav__list {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+  }
+
+  .contact {
+    height: inherit;
+    a {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 16vw;
+      height: 100%;
+      background-color: $accent;
+      color: #fff;
+    }
+  }
+</style>
+
+<script></script>
