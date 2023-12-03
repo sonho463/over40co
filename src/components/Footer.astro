@@ -1,1 +1,36 @@
-<h1>フッター</h1>
+---
+import { Image } from "astro:assets";
+import logo from "../images/icon-512x512.png";
+---
+
+<footer class="footer">
+  <div class="footerLogo">
+    <Image src={logo} alt="" />
+  </div>
+  <div class="copyright">
+    &copy; 2023 Over40co All Rights Reserved.
+  </div>
+</footer>
+
+<style lang="scss">
+    @use "../styles/variables" as *;
+    .footer{
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin-top: 4vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: $main-pale;
+    }
+    .footerLogo{
+        width: 8vw;
+    }
+
+    .copyright{
+        font-size: 1.6vw;
+    }
+    
+</style>
