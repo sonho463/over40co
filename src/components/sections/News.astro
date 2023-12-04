@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionTitle from "../SectionTitle.astro";
+
+import { getNews } from "../../lib/microcms";
+
+const response = await getNews({ fields: ["id", "title"], limit: 3 });
+
+---
+
+<section class="info content-width">
+  <SectionTitle text="最新のお知らせ" lead="弊社からの最新のお知らせです。" />
+  <ul>
+    {
+      response.contents.map((content: any) => (
+        <li>
+          <a href={`news/${content.id}`}>{content.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

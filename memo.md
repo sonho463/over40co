@@ -133,8 +133,38 @@
 1. 何度も使いそうな部品　CTA →　Footerに゙追加
 1. ボタンコンポーネント
 ### お知らせ
-1. microCMSとの接続
-1. 環境変数→vercelにも必要
+1. 環境変数の設定
+    1. .envファイルを追加
+        サービス名：over40co
+        APIキー＊＊＊
+    
+        ```
+        MICROCMS_SERVICE_DOMAIN=<YOUR_SERVICE> # .microcms.io は含まない値
+        MICROCMS_API_KEY=<YOUR_KEY_VALUE>
+        ```
+1. microcms javascript sdkをインストール
+    `npm install microcms-js-sdk`
+
+1. おまじないをコピペしてちょっと変更
+    microCMS様のブログより
+    [AstroとmicroCMSでつくるブログサイト](https://blog.microcms.io/astro-microcms-introduction/)
+
+    変更点
+        型のインポートを厳密に
+
+        ```
+        import { createClient, MicroCMSQueries } from "microcms-js-sdk";
+        import { createClient } from "microcms-js-sdk";
+        import type { MicroCMSQueries } from "microcms-js-sdk";
+        ```      
+        
+    受け取れているか確認
+
+        `console.log(client);`
+
+1. トップページに 
+    
+1. 環境変数→vercelにも設定
 ### お問い合わせ作ってみる
 1. SSGフォーム
 2. NetlifyForms

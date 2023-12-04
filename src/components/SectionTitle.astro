@@ -1,11 +1,14 @@
 ---
-const { text } = Astro.props;
+const { text,lead } = Astro.props;
 
 ---
 
 <h2>
   {text}
 </h2>
+<p>
+  {lead}
+</p>
 
 <style lang="scss">
   @use "../styles/variables" as *;
@@ -27,5 +30,14 @@ const { text } = Astro.props;
       bottom: -10%;
       right: -10%;
     }
+  }
+
+  p{
+    font-size: 2vw;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 6vw;
+    line-height: 1.4;
   }
 </style>

@@ -5,15 +5,17 @@ import FirsetView from "../components/sections/FirsetView.astro";
 import Layout from "../layouts/Layout.astro";
 import astroImage from "../images/AdobeStock_625692265resize.jpg";
 import SectionTitle from "../components/SectionTitle.astro";
+import Info from "../components/sections/News.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <FirsetView />
+    <Info />
     <Features />
 
     <section class="imageTest">
-      <SectionTitle text="画像のテスト"/>
+      <SectionTitle text="画像のテスト" />
       <Image src={astroImage} alt="" />
     </section>
   </main>
