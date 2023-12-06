@@ -9,7 +9,7 @@ const response = await getNews({ fields: ["id", "title"], limit: 3 });
 ---
 
 <section class="info content-width">
-  <SectionTitle text="最新のお知らせ" lead="弊社からの最新のお知らせです。" />
+  <SectionTitle text="最新のお知らせ" lead="" />
   <ul>
     {
       response.contents.map((content: any) => (
@@ -20,3 +20,26 @@ const response = await getNews({ fields: ["id", "title"], limit: 3 });
     }
   </ul>
 </section>
+<style lang="scss">
+  .info {
+    padding: 40px 0;
+  }
+  .info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .info ul li {
+    margin-bottom: 20px;
+  }
+  .info ul li a {
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+  .info ul li a:hover {
+    background-color: #f5f5f5;
+  }
+</style>

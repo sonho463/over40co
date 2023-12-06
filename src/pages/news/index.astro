@@ -1,22 +1,56 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
+import { Image } from "astro:assets";
 import { getNews } from "../../lib/microcms";
+import LowerFv from "../../components/LowerFv.astro";
+import dog from "../../images/unsplash_oU6KZTXhuvk.jpg";
 
 const response = await getNews({ fields: ["id", "title"] });
+const title = "お知らせ一覧";
+const desc = "お知らせ一覧ページです。";
 ---
 
-<Layout title="My first blog with Astro">
+<Layout title={title} desc={desc}>
   <main>
-    <h1>NewsIndex</h1>
+    <div class="fv">
+      <div class="image">
+        <Image src={dog} alt="" />
+      </div>
+      <LowerFv title={title} desc={desc} />
+    </div>
     <ul>
       {
         response.contents.map((content: any) => (
           <li>
-            <a href={content.id}>{content.title}</a>
+            <a href={`news/${content.id}`}>{content.title}</a>
           </li>
         ))
       }
     </ul>
   </main>
 </Layout>
+<style>
+  main {
+    padding: 2rem;
+  }
+  .fv {
+    position: relative;
+    height: 50vh;
+  }
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  ul {
+    margin-top: 2rem;
+  }
+  li {
+    margin-bottom: 1rem;
+  }
+</style>
